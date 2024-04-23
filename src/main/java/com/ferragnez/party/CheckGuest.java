@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class CheckGuest {
 
 
-	private static final Scanner input = null;
-
 	public static void main(String[] args) {
 		
 		// Il programma richiede di controllare gli invitati alla festa dei Ferragnez.
@@ -18,7 +16,9 @@ public class CheckGuest {
 		 */
 		
 		// Lista invitati
-		String [] listaInvitati = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti", "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
+		String [] listaInvitati = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", 
+				"J-Ax", "Francesco Totti", "Ilary Blasi", "Bebe Vio", "Luis", 
+				"Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
 		
 		// Stampo la lista degli invitati per vedere se funziona l'Array
 		// System.out.println(Arrays.toString(listaInvitati));
@@ -32,7 +32,7 @@ public class CheckGuest {
 		System.out.println("Mi dica nome e cognome, gentilmente");
 		
 		// Stampo l'input per la richiesta dell'utente, creando una variabile
-		String nomeInvitato = input.nextLine();
+		String nomeInvitato = scan.nextLine();
 		// System.out.println(nomeInvitato);
 		
 		// Creo il ciclo FOR per verificare la presenza dell'invitato
@@ -45,12 +45,22 @@ public class CheckGuest {
 			
 			String nomeScritto = listaInvitati[i];
 			// Stampo per una verifica
-			System.out.println(nomeScritto);
+			// System.out.println(nomeScritto);
 			
 			// Creo l'IF
-			if (nomeScritto == nomeInvitato) {
+			if (nomeScritto.equals(nomeInvitato)) {
 				presente = true;
+				break;
 			}
+			
+		}
+		
+		// SE presente stampo un Benvenuto
+		if (presente) {
+			
+			System.out.println("Benvenuto alla festa!");
+		} else {
+			System.out.println("Non puoi entrare, la invito ad andarsene");
 		}
 	}
 }
