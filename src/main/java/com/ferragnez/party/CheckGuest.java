@@ -1,6 +1,11 @@
 package com.ferragnez.party;
 
+import java.util.Scanner;
+
 public class CheckGuest {
+
+
+	private static final Scanner input = null;
 
 	public static void main(String[] args) {
 		
@@ -20,10 +25,32 @@ public class CheckGuest {
 		
 		// Creo l'input che l'utente deve eseguire con scanner
 		Scanner scan = new Scanner(System.in);
-		String stampa = scan.nextLine();
 		
-		System.out.println();
-
+		// Stampo il titolo di benvenuto
+		// Stampo la richiesta dati dell'utente
+		System.out.println("Buonasera, benvenuto/a alla festa a casa Ferragnez");
+		System.out.println("Mi dica nome e cognome, gentilmente");
+		
+		// Stampo l'input per la richiesta dell'utente, creando una variabile
+		String nomeInvitato = input.nextLine();
+		// System.out.println(nomeInvitato);
+		
+		// Creo il ciclo FOR per verificare la presenza dell'invitato
+		// - SE è presente, può entrare
+		// - ALTRIMENTI non può entrare
+		
+		boolean presente = false;
+		
+		for (int i = 0; i < listaInvitati.length; i++) {
+			
+			String nomeScritto = listaInvitati[i];
+			// Stampo per una verifica
+			System.out.println(nomeScritto);
+			
+			// Creo l'IF
+			if (nomeScritto == nomeInvitato) {
+				presente = true;
+			}
+		}
 	}
-
 }
